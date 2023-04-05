@@ -1,8 +1,6 @@
 import setuptools
 from setuptools import setup, find_packages
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
  
 setup_requires = [
     ]
@@ -25,7 +23,6 @@ setuptools.setup(
     author="Youngco",
     author_email="popofh12345@naver.com",
     description="Fine dust visualization",
-    long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Pandemic23/FCV-ver1.3/tree/main",
     packages=setuptools.find_packages(),
