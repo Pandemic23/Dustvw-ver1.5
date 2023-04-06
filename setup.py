@@ -8,12 +8,13 @@ from setuptools import setup, find_packages
    # 'os',
   #  'pandas==1.5.3', 
   #  'io',
- #   'webbrowser'
+ #   'webbrowser',
+ # 'urllib.request'
  #   ]
 
 
 
-setup(name="Fcv",
+setup(name="Dustvw",
     version="0.1.3",
     author="Youngco",
     author_email="popofh12345@naver.com",
