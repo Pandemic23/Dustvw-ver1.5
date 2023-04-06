@@ -1,9 +1,7 @@
-import setuptools
 from setuptools import setup, find_packages
 
  
-#setup_requires = [
-  #  ]
+
 
 #install_requires = [
    # 'Folium==0.14.00',
@@ -13,9 +11,7 @@ from setuptools import setup, find_packages
  #   'webbrowser'
  #   ]
 
-#dependency_links = [
- #   'https://github.com/Pandemic23/FCV-ver1.3/tree/main',
- #   ]
+
 
 setup(name="Dust",
     version="0.1.3",
