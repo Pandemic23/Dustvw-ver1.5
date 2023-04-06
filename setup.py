@@ -17,7 +17,7 @@ from setuptools import setup, find_packages
  #   'https://github.com/Pandemic23/FCV-ver1.3/tree/main',
  #   ]
 
-setup(name="Findust",
+setup(name="Dust",
     version="0.1.3",
     author="Youngco",
     author_email="popofh12345@naver.com",

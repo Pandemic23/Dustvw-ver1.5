@@ -1,8 +1,0 @@
-setup.py
-FCV/FCV.py
-FCV/__init__.py
-Findust.egg-info/PKG-INFO
-Findust.egg-info/SOURCES.txt
-Findust.egg-info/dependency_links.txt
-Findust.egg-info/requires.txt
-Findust.egg-info/top_level.txt
