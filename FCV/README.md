@@ -12,17 +12,14 @@ pandas
 os
 io
 webbrowser
+urllib.request
 
 
 -필요 데이터 파일-
 
-1.data.csv (형식 중요)
--형식-
-time	Latitude		Longitude	PM2.5
-0:0:0:0	x		        y		    미세먼지 농도
+1.data.csv (미세먼지 측정데이터/형식 참고)
 
-2.미세먼지 농도 지표 이미지파일(이름:지표.jpg)
-※주의사항
+2.미세먼지농도지표.jpg
 이 파일은 꼭 F.C.V 생성된 html과 같은 경로에 위치하게 해야한다.
 
 
@@ -45,4 +42,4 @@ ver 1.2
 ver 1.3
 -미세먼지 농도 지표 이미지 객체 자동 생성
 -마우스 위치에 따른 위도 경도 실시간 표츌
--
+
