@@ -1,8 +1,0 @@
-setup.py
-FCV/FCV.py
-FCV/__init__.py
-Fcv.egg-info/PKG-INFO
-Fcv.egg-info/SOURCES.txt
-Fcv.egg-info/dependency_links.txt
-Fcv.egg-info/requires.txt
-Fcv.egg-info/top_level.txt
