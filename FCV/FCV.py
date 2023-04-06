@@ -2,19 +2,12 @@ import folium
 import pandas as pd
 import os
 import io
+import urllib.request
 from folium import utilities
 from folium import plugins
 import webbrowser
 
 
-#문제점: 
-#   1.글꼴 크기가 작다.
-#   2.오토 스케일 좀더 보기 편하게 자동적으로 경로 전체가 보이게 하기
-#   3.*패키징 라이브러리화 Folium처럼 함수같이 사용 가능하게 만들기*
-#해결방안:  
-#   1.folium 맵 스타일 기능에서 변경 가능
-#   2.Foliunm 내부 오토 스케일 기능 여부 확인
-#   3.setup.py 패키징 이용
 
 #현재 가상환경 경로 데이터 수집
 dir=os.getcwd()+'\\'
@@ -98,6 +91,11 @@ for i in range(len(over_gps35)):
 for i in range(len(over_gps75)):
     folium.CircleMarker(over_gps75[i],
     tooltip= str(over_PM75[i])+"pm",radius=5,fill=True,color='none',fill_opacity=0.7, fill_color='#c0392b').add_to(m)
+    
+#HTML에 사용될 미세먼지농도지표.jpg다운로드
+url='https://raw.githubusercontent.com/Pandemic23/FCV-ver1.3/main/%EC%A7%80%ED%91%9C.jpg'
+urllib.request.urlretrieve(url, '미세먼지농도지표.jpg')
+print('\n 미세먼지농도지표.jpg 다운로드 완료')
 
 #HTML 맵 저장 시 미세먼지 농도 지표 이미지 파일 구성요소 추가
 m.get_root().html.add_child(folium.Element("""
@@ -113,7 +111,7 @@ m.get_root().html.add_child(folium.Element("""
 Name=str(input('저장할 HTML 이름을 입력해주세요:'))
 m.save(Name+'.html')  
 
-print('\n HTML파일생성이 완료 되었습니다!')  
+print('\n HTML파일생성이 완료 되었습니다')  
 print('\n 저장 경로는'+dir+Name+'.html입니다')
 
 
