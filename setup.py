@@ -13,13 +13,13 @@ from setuptools import setup, find_packages
 
 
 
-setup(name="Dust",
+setup(name="Fcv",
     version="0.1.3",
     author="Youngco",
     author_email="popofh12345@naver.com",
     description="Fine dust visualization",
     url="https://github.com/Pandemic23/FCV-ver1.3/tree/main",
-    install_requires=['Folium','os','pandas', 'io','webbrowser',],
+    install_requires=['Folium','pandas', ],
     packages=['FCV'],
     classifiers=[
         "Programming Language :: Python :: 3",
