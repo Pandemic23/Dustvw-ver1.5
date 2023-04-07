@@ -15,7 +15,7 @@ dir=os.getcwd()+'\\'
 a=str(input('데이터 파일의 경로를 입력해주세요:'))
 
 #데이터파일 경로를 따라 인식
-df = pd.read_csv(a,encoding='cp949')
+df = pd.read_csv(a)
 
 #처음 시작 지점 위치 값 추출
 Start=df.loc[[1],['Latitude','Longitude']]
@@ -93,9 +93,12 @@ for i in range(len(over_gps75)):
     tooltip= str(over_PM75[i])+"pm",radius=5,fill=True,color='none',fill_opacity=0.7, fill_color='#c0392b').add_to(m)
     
 #HTML에 사용될 미세먼지농도지표.jpg다운로드
-url='https://raw.githubusercontent.com/Pandemic23/FCV-ver1.3/main/%EC%A7%80%ED%91%9C.jpg'
-urllib.request.urlretrieve(url, '미세먼지농도지표.jpg')
-print('\n 미세먼지농도지표.jpg 다운로드 완료')
+if os.path.isfile('지표.jpg'):
+    print("\a 지표.jpg가 존재합니다")
+else:
+    url='https://raw.githubusercontent.com/Pandemic23/FCV-ver1.3/main/%EC%A7%80%ED%91%9C.jpg'
+    urllib.request.urlretrieve(url, '지표.jpg')
+    print('\n 미세먼지농도지표.jpg 다운로드 완료')
 
 #HTML 맵 저장 시 미세먼지 농도 지표 이미지 파일 구성요소 추가
 m.get_root().html.add_child(folium.Element("""
