@@ -15,7 +15,7 @@ from setuptools import setup, find_packages
 
 
 setup(name="Dustvw",
-    version="0.1.7",
+    version="0.1.9",
     author="Youngco",
     author_email="popofh12345@naver.com",
     description="Fine dust visualization",
