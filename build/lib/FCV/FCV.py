@@ -6,27 +6,53 @@ import urllib.request
 from folium import utilities
 from folium import plugins
 import webbrowser
+if os.path.isfile('encoding.csv'):
+    print("\a 데이터.csv가 존재합니다")
+    
+else:
+    #데이터 텍스 파일 경로 입력
+    data= str(input('데이터텍스트 경로 입력:'))
+    new_text_content = '' #텍스트 자료값 초기화
+    with open(data,'r') as f:
+        lines = f.readlines()
+    for i, l in enumerate(lines):
+        new_string=l.strip().replace("PM 1.0 : ","").replace(" PM 2.5 : ","").replace(" PM 10 : ","").replace("Temperature = ","").replace(" Humidity = ","").replace("speed: ","").replace(" Latitude: ","").replace("Longitude: ","")
+        if new_string:
+                new_text_content += new_string + '\n'
+        else:
+                new_text_content += '\n'   
+    with open(data,'w') as f:
+        f.write('time,PM 1.0,PM2.5,PM 10,Temperature,Humidity,speed,Latitude,Longitude\n')
+        f.write(new_text_content)
+    file = pd.read_csv(data)
+    new_csv_file = file.to_csv(os.getcwd()+'\\encoding.csv')
 
 
 
 #현재 가상환경 경로 데이터 수집
 dir=os.getcwd()+'\\'
-#미세먼지 측정 데이터파일(.csv) 경로 입력
-a=str(input('데이터 파일의 경로를 입력해주세요:'))
 
-#데이터파일 경로를 따라 인식
-df = pd.read_csv(a)
 
-#처음 시작 지점 위치 값 추출
-Start=df.loc[[1],['Latitude','Longitude']]
+#데이터csv파일 경로를 따라 인식
+df = pd.read_csv(str(os.getcwd()+'\\encoding.csv'))
+
+#위치 정보 리스트 변형
+location= df['Latitude']
+#미세먼지 농도를 리스트 변형
+pm= df['PM2.5'].tolist()
+#첫 지점이 좌표가 0일 경우 다른 좌표로 변경
+for n in df.index:
+        if location[n] !=0.0:
+            Start=[df['Latitude'][n],df['Longitude'][n]]
+            break
+        else:
+            continue
+
+
 
 #시작지점 좌표 출력 
 print('\n 시작지점')
 print(Start)
-
-#미세먼지 농도를 리스트 변형
-pm= df['PM2.5'].tolist()
-
 #미세먼지 농도에 따른 좌표 및 농도 지수 배열 생성
 
 over_PM= []

@@ -15,12 +15,12 @@ from setuptools import setup, find_packages
 
 
 setup(name="Dustvw",
-    version="0.1.4",
+    version="0.1.5",
     author="Youngco",
     author_email="popofh12345@naver.com",
     description="Fine dust visualization",
-    url="https://github.com/Pandemic23/FCV-ver1.3/tree/main",
-    install_requires=['Folium','pandas', ],
+    url="https://github.com/Pandemic23/FCV-ver1.5",
+    install_requires=['Folium','pandas' ],
     packages=['FCV'],
     classifiers=[
         "Programming Language :: Python :: 3",
