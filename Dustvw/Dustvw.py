@@ -62,7 +62,7 @@ def Dustvw():
                 over_gps75 = []
 
                 #맵 생성 초기 관측 좌표 설정 및 스타일 설정
-                m=folium_map=folium.Map(Start,zoom_start=13)
+                m=folium_map=folium.Map(Start,zoom_start=14)
 
                 #마우스 위치에 따른 위도 경도를 오른쪽 및에 표기
                 plugins.MousePosition().add_to(m)
@@ -190,7 +190,7 @@ def Dustvw():
             over_gps75 = []
 
             #맵 생성 초기 관측 좌표 설정 및 스타일 설정
-            m=folium_map=folium.Map(Start,zoom_start=13)
+            m=folium_map=folium.Map(Start,zoom_start=14)
 
             #마우스 위치에 따른 위도 경도를 오른쪽 및에 표기
             plugins.MousePosition().add_to(m)
